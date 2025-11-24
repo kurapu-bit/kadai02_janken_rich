@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ボイスじゃんけん</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- タイトル画面 -->
+    <div id="title-screen" class="screen active">
+        <h1>ボイスじゃんけん（近畿編）</h1>
+
+        <div class="card">
+            <p>声で「グー・チョキ・パー」を言って勝負！</p>
+            <button id="start-btn">♪ ゲームをはじめる ♪</button>
+        </div>
+    </div>
+
+    <!-- ゲーム画面 -->
+    <div id="game-screen" class="screen">
+        <div class="card">
+
+            <!-- 手表示 -->
+            <h2>あなたの手：<span id="player-hand">---</span></h2>
+            <h2>相手の手：<span id="enemy-hand">---</span></h2>
+
+            <!-- 認識中表示 -->
+            <div id="listening-status" class="listening" style="display:none;">
+                🎤 聞き取っています…
+            </div>
+
+            <!-- 結果 -->
+            <h2><span id="result">---</span></h2>
+
+            <!-- マイク -->
+            <button id="mic-btn">🎤 音声スタート</button>
+
+            <!-- カウンター -->
+            <div class="counter-box">
+                <p>勝ち：<span id="count-win">0</span></p>
+                <p>負け：<span id="count-lose">0</span></p>
+                <p>あいこ：<span id="count-draw">0</span></p>
+                <p>総プレイ回数：<span id="count-total">0</span></p>
+            </div>
+
+            <!-- 近畿地方 ターゲット -->
+            <h2>ターゲット：<span id="target-pref">---</span></h2>
+
+            <!-- 地図 -->
+            <div id="kinki-map">
+                <svg viewBox="0 0 300 200">
+
+                    <!-- 滋賀県 -->
+                    <rect id="shiga" x="120" y="20" width="60" height="40" fill="#dddddd"></rect>
+                    <text x="150" y="45" font-size="16" text-anchor="middle">滋賀</text>
+
+                    <!-- 京都府 -->
+                    <rect id="kyoto" x="60" y="20" width="60" height="40" fill="#dddddd"></rect>
+                    <text x="90" y="45" font-size="16" text-anchor="middle">京都</text>
+
+                    <!-- 大阪府 -->
+                    <rect id="osaka" x="60" y="70" width="60" height="40" fill="#dddddd"></rect>
+                    <text x="90" y="95" font-size="16" text-anchor="middle">大阪</text>
+
+                    <!-- 兵庫県 -->
+                    <rect id="hyogo" x="0" y="70" width="60" height="40" fill="#dddddd"></rect>
+                    <text x="30" y="95" font-size="16" text-anchor="middle">兵庫</text>
+
+                    <!-- 奈良県 -->
+                    <rect id="nara" x="120" y="70" width="60" height="40" fill="#dddddd"></rect>
+                    <text x="150" y="95" font-size="16" text-anchor="middle">奈良</text>
+
+                    <!-- 和歌山県 -->
+                    <rect id="wakayama" x="60" y="120" width="60" height="40" fill="#dddddd"></rect>
+                    <text x="90" y="145" font-size="16" text-anchor="middle">和歌山</text>
+
+                    <!-- 三重県 -->
+                    <rect id="mie" x="180" y="70" width="60" height="40" fill="#dddddd"></rect>
+                    <text x="210" y="95" font-size="16" text-anchor="middle">三重</text>
+
+                </svg>
+            </div>
+
+            <!-- 豆知識 -->
+            <div id="pref-info" class="pref-info-box" style="display:none; margin-top:20px;">
+                <h3 id="info-title">---</h3>
+                <p id="info-text">---</p>
+            </div>
+
+        </div> <!-- card end -->
+    </div> <!-- game-screen end -->
+
+    <!-- 光の粒 -->
+    <div class="particle" style="left:15%; animation-delay:1.2s; animation-duration:11s;"></div>
+    <div class="particle" style="left:25%; animation-delay:3.1s; animation-duration:15s;"></div>
+    <div class="particle" style="left:45%; animation-delay:0.8s; animation-duration:10s;"></div>
+    <div class="particle" style="left:60%; animation-delay:2.3s; animation-duration:13s;"></div>
+    <div class="particle" style="left:80%; animation-delay:1.8s; animation-duration:9s;"></div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
